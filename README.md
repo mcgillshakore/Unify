@@ -1,4 +1,4 @@
-# Eccentric
+# Eccentric - Mod 5 Project
 
 **Name of App:** Eccentric
 
