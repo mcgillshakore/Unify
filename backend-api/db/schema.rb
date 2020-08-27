@@ -16,14 +16,13 @@ ActiveRecord::Schema.define(version: 2020_08_25_231913) do
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.integer "location_id"
     t.integer "group_id"
-    t.integer "user_id"
+    t.integer "location_id"
     t.string "name"
-    t.datetime "date"
     t.string "photo"
-    t.integer "num_of_tickets"
     t.string "description"
+    t.datetime "date"
+    t.integer "num_of_tickets"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -32,8 +31,8 @@ ActiveRecord::Schema.define(version: 2020_08_25_231913) do
     t.integer "location_id"
     t.string "name"
     t.string "photo"
-    t.integer "num_of_members"
     t.string "description"
+    t.integer "num_of_members"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,24 +52,24 @@ ActiveRecord::Schema.define(version: 2020_08_25_231913) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.integer "group_id"
     t.integer "user_id"
+    t.integer "group_id"
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "group_id"
     t.integer "user_id"
+    t.integer "group_id"
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.integer "event_id"
     t.integer "user_id"
+    t.integer "event_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -79,7 +78,6 @@ ActiveRecord::Schema.define(version: 2020_08_25_231913) do
     t.string "full_name"
     t.string "username"
     t.string "password_digest"
-    t.string "bio"
     t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

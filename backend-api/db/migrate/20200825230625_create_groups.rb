@@ -4,8 +4,8 @@ class CreateGroups < ActiveRecord::Migration[6.0]
       t.integer :location_id
       t.string :name
       t.string :photo
-      t.integer :num_of_members
       t.string :description
+      t.integer :num_of_members
 
       t.timestamps
     end
