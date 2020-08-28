@@ -1,6 +1,7 @@
 class GroupSerializer
   include FastJsonapi::ObjectSerializer
   attributes :location_id, :name, :photo, :description, :num_of_members
+  
   belongs_to :location
   has_many :members
   has_many :users, through: :members
