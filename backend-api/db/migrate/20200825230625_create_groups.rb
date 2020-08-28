@@ -5,6 +5,7 @@ class CreateGroups < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :photo
       t.string :description
+      t.string :slug
       t.integer :num_of_members
 
       t.timestamps

@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_231913) do
     t.string "name"
     t.string "photo"
     t.string "description"
+    t.string "slug"
     t.integer "num_of_members"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
