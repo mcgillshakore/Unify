@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_231913) do
   create_table "photos", force: :cascade do |t|
     t.integer "user_id"
     t.integer "group_id"
+    t.string "title"
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -63,7 +64,8 @@ ActiveRecord::Schema.define(version: 2020_08_25_231913) do
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id"
     t.integer "group_id"
-    t.string "comment"
+    t.string "title"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

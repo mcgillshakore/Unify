@@ -149,11 +149,13 @@ end
 6.times do |index|
     Photo.create!(user_id: User.all.sample.id,
                   group_id: Group.all.sample.id,
+                  title: "Photo Title",
                   img_url: "Photo")
 end
 
 6.times do |index|
     Review.create!(user_id: User.all.sample.id,
                    group_id: Group.all.sample.id,
-                   comment: "Comment")
+                   title: "Review Title",
+                   description: "Comment")
 end
