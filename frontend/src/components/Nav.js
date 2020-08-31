@@ -10,6 +10,8 @@ const Nav = (props) => {
            <span> </span>
            <Link to="/signup">Signup</Link>
            <span> </span>
+           <Link to="/signedin">View Profile</Link>
+           <span> </span>
         </div>
     )
 }
