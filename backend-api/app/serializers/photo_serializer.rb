@@ -1,7 +1,4 @@
-class PhotoSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :user_id, :group_id, :title, :img_url
-  
-  belongs_to :user
-  belongs_to :group
+class PhotoSerializer < ActiveModel::Serializer
+  attributes :id, :user_id, :group_id, :title, :img_url
+
 end

@@ -2,24 +2,24 @@
 class GroupsController < ApplicationController
     def index
         groups = Group.all
-        render json: GroupSerializer.new(groups, options).serialized_json
+        render json: groups
     end
 
     def show
         group = Group.find_by(slug: params[:slug])
-        render json: GroupSerializer.new(group, options).serialized_json
+        render json: group
     end
 
     def grab_group
         group = Group.find_by(slug: params[:slug])
-        render json: GroupSerializer.new(group).serialized_json
+        render json: group
     end
 
     def create
         group = Group.new(group_params)
 
         if group.save
-            render json: GroupSerializer.new(group).serialized_json
+            render json: group
         else
             render json: { error: group.errors.messages}, status: 422
         end
@@ -29,7 +29,7 @@ class GroupsController < ApplicationController
         group = Group.find_by(slug: params[:slug])
 
         if group.update(group_params)
-            render json: GroupSerializer.new(group, options).serialized_json
+            render json: group
         else
             render json: { error: group.errors.messages}, status: 422
         end
@@ -49,10 +49,6 @@ class GroupsController < ApplicationController
 
     def group_params
         params.require(:group).permit(:location_id, :name, :photo, :description)
-    end
-
-    def options
-        @options ||= { include: %i[reviews]}
     end
 end
 

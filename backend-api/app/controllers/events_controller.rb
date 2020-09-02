@@ -1,18 +1,18 @@
 class EventsController < ApplicationController
     def index
         events = Event.all
-        render json: EventSerializer.new(events).serialized_json
+        render json: events
     end
 
     def show
         event = Event.find_by(id: params[:id])
-        render json: EventSerializer.new(event).serialized_json
+        render json: event
     end
 
     def create
         event = Event.new(event_params)
         if event.save
-            render json: EventSerializer.new(event).serialized_json
+            render json: event
         else
             render json: {error: event.errors.messages}, status: 422
         end
@@ -21,7 +21,7 @@ class EventsController < ApplicationController
     def update
         event = Event.find_by(id: params[:id])
         if event.update(event_params)
-            render json: EventSerializer.new(event).serialized_json
+            render json: event
         else
             render json: {error: event.errors.messages}, status: 422
         end

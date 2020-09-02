@@ -1,16 +1,49 @@
-class UserSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :full_name, :username, :password, :avatar
-  
-    has_many :members
-    has_many :groups, through: :members
+class UserSerializer < ActiveModel::Serializer
+  attributes :id, :full_name, :username, :password, :bio, :avatar, :groups, :events, :photos, :reviews 
 
-    has_many :tickets
-    has_many :events, through: :tickets
 
-    has_many :photos
-    has_many :group_photos, through: :photos, source: :group
-    
-    has_many :reviews
-    has_many :group_reviews, through: :reviews, source: :group
+  def groups
+    self.object.groups.map do |group_obj|
+      {
+        id: group_obj.id,
+        name: group_obj.name,
+      }
+    end
+  end
+
+  def events
+    self.object.events.map do |event_obj|
+      {
+        id: event_obj.id,
+        name: event_obj.name,
+        description: event_obj.description,
+        date: event_obj.date
+      }
+    end
+  end
+
+  def photos
+    self.object.photos.map do |photo_obj|
+      {
+        id: photo_obj.id, 
+        group_id: photo_obj.group_id,
+        title: photo_obj.title,
+        img_url: photo_obj.img_url
+      }
+    end
+  end
+
+  def reviews
+    self.object.reviews.map do |review_obj|
+      {
+        id: review_obj.id, 
+        group_id: review_obj.group_id,
+        title: review_obj.title,
+        description: review_obj.description
+      }
+    end
+  end
+
+
+
 end

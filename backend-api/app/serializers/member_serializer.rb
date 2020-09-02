@@ -1,7 +1,4 @@
-class MemberSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :user_id, :group_id
-  
-  belongs_to :user
-  belongs_to :group
+class MemberSerializer < ActiveModel::Serializer
+  attributes :id, :user_id, :group_id, :user, :group
+
 end

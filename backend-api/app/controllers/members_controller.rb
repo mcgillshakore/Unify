@@ -1,11 +1,11 @@
 class MembersController < ApplicationController
     def index
         members = Member.all
-        render json: MemberSerializer.new(members).serialized_json
+        render json: members
     end
 
     def show
         member = Member.find_by(id: params[:id])
-        render json: MemberSerializer.new(member).serialized_json
+        render json: member
     end
 end

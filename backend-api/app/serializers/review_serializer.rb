@@ -1,7 +1,4 @@
-class ReviewSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :user_id, :group_id, :title, :description
-  
-  belongs_to :user
-  belongs_to :group
+class ReviewSerializer < ActiveModel::Serializer
+  attributes :id, :user_id, :group_id, :title, :description
+
 end

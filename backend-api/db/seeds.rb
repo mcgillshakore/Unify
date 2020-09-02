@@ -21,61 +21,50 @@ users = User.create([
         full_name: "Dominque Bedford",
         username: 'dbedford',
         password: '1234',
+        bio: "", 
         avatar: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
     },
     {
         full_name: "Anthony Tripp",
         username: 'atripp',
         password: '1234',
+        bio: "", 
         avatar: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
     },
     {
         full_name: "Samuel Rods",
         username: 'srods',
         password: '1234',
+        bio: "", 
         avatar: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
     },
     {
         full_name: "Mary Adams",
         username: 'madams',
         password: '1234',
+        bio: "", 
         avatar: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
     },
 ])
-
-locations = Location.create([
-    {
-        city: "Memphis",
-        state: "TN"
-    },
-    {
-        city: "Houston",
-        state: "TX"
-    },
-    {
-        city: "Atlanta",
-        state: "GA"
-    },
-    {   
-        city: "Buffalo",
-        state: "NY"
-    }
-])
+l1 = Location.create(city: "Memphis", state: "TN")
+l2 = Location.create(city: "Houston", state: "TX")
+l3 = Location.create(city: "Buffalo", state: "NY")
+l4 = Location.create(city: "San Francisco", state: "CA")
 
     groups = Group.create([
         {
-            location_id: Location.all.sample.id,
+            location_id: l1.id,
             name: "Young People of Memphis",
             photo: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
             description: "Young adults who spend time together",
-            num_of_members: 5
+            num_of_members: 0
         },
         {
             location_id: Location.all.sample.id,
             name: "Humans of Love",
             photo: "https://images.unsplash.com/photo-1522543558187-768b6df7c25c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
             description: "Adults learning to love unconditionally.",
-            num_of_members: 5
+            num_of_members: 0
         }
     ])
 
