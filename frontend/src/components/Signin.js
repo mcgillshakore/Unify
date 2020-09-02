@@ -39,7 +39,7 @@ function Signin(props) {
                 <input name='username' type='text' placeholder='Enter Username...'></input>
                 <br/>
                 <br/>
-                <input name='password' type='text' placeholder='Enter Password...'></input>
+                <input name='password' type='password' placeholder='Enter Password...'></input>
                 <br/>
                 <br/>
                 <input type='submit' value='Sign In'></input>

@@ -1,18 +1,18 @@
 class ReviewsController < ApplicationController
-    # def index
-    #     reviews = Review.all
-    #     render json: ReviewSerializer.new(reviews)
-    # end
+    def index
+        reviews = Review.all
+        render json: reviews
+    end
 
-    # def show
-    #     review = Review.find_by(id: params[:id])
-    #     render json: ReviewSerializer.new(review)
-    # end
+    def show
+        review = Review.find_by(id: params[:id])
+        render json: review
+    end
 
     def create
         review = Review.new(reviews_params)
         if review.save
-            render json: ReviewSerializer.new(review).serialized_json
+            render json: review
         else
             render json: { error: review.errors.message }, status: 422
         end

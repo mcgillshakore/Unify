@@ -13,13 +13,13 @@ function GroupCollection(){
         .then(resp => resp.json())
         .then(fetchGroups => {
             // console.log(fetchGroups.data, "fetchGroups");
-            dispatch({type: "GET_GROUPS", groups:fetchGroups.data})
+            dispatch({type: "GET_GROUPS", groups:fetchGroups})
         })
     },[dispatch])
         
     return(
         <div>
-             {allGroups.map(group => <GroupCard key={group.id} group={group.attributes}/>)}
+             {allGroups.map(group => <GroupCard key={group.id} group={group}/>)}
         </div>
     )
 }

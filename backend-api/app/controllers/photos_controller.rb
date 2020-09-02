@@ -1,8 +1,12 @@
 class PhotosController < ApplicationController
+    def index
+        photos = Photo.all
+        render json: photos
+    end
     def create
         photo = Photo.new(photos_params)
         if photo.save
-            render json: PhotoSerializer.new(photo).serialized_json
+            render json: photo
         else
             render json: { error: photo.errors.message }, status: 422
         end
