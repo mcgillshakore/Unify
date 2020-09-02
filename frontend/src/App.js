@@ -5,8 +5,12 @@ import SignupForm from './components/SignupForm';
 import EditUser from './components/EditUser';
 import Home from './components/Home';
 import Nav from './components/Nav';
+import GroupInfo from './components/GroupInfo'
 import { Switch, Route} from 'react-router-dom';
 import { useHistory } from 'react-router';
+// import { useDispatch, useSelector } from 'react-redux'
+// import GroupCollection from './components/GroupCollection';
+
 
 
 function App() {
@@ -29,13 +33,12 @@ function App() {
     fetch('http://localhost:3000/check-signin', {
       credentials: 'include',
     })
-    .then(res => res.json())
+    .then(resp => resp.json())
     .then(user => {
       if(user.username){
         setUser(user)
-        history.push('/signedin')
       } else {
-        history.push('/signin')
+        history.push('/')
       }
     })
   },[history])
@@ -51,6 +54,7 @@ function App() {
             <Route exact path ='/signin' component= { () => <Signin setUser = {setUser} currentUser = {currentUser}/> }/>
             <Route exact path ='/signedin' component={ () => <Signedin currentUser = { currentUser } signout = {signout}/> }/>
             <Route exact path ='/signup' component = {SignupForm}/>
+            <Route exact path="/:slug" component={GroupInfo}/>
           </Switch>
     </div>
   );
