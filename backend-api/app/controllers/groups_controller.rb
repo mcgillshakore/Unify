@@ -10,6 +10,11 @@ class GroupsController < ApplicationController
         render json: GroupSerializer.new(group, options).serialized_json
     end
 
+    def grab_group
+        group = Group.find_by(slug: params[:slug])
+        render json: GroupSerializer.new(group).serialized_json
+    end
+
     def create
         group = Group.new(group_params)
 

@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
+import GroupCollection from './GroupCollection';
 
-class Home extends React.Component {
-    render(){
-        return(
-            <div>
-                <h1>Home Page</h1>
-            </div>
-        )
-    }
+const Home = (props) => {
+    return(
+        <div>
+            <h1>Home Page</h1>
+            <GroupCollection />
+        </div>
+    )
 }
 
 export default Home

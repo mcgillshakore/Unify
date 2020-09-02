@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   post '/signin', to:'auth#signin'
   get '/check-signin', to:'auth#check_signin'
   get '/signout', to:'auth#signout'
+
+  post '/group-info', to:'groups#grab_group'
 end
