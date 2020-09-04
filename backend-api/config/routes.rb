@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get '/signout', to:'auth#signout'
 
   post '/group-info', to:'groups#grab_group'
+  post '/user-info', to:'users#grab_user'
 end

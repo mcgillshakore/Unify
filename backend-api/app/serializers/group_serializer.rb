@@ -1,5 +1,5 @@
 class GroupSerializer < ActiveModel::Serializer
-  attributes :id, :location_id, :name, :location, :photo, :description, :num_of_members, :slug, :users, :photos, :reviews
+  attributes :id, :location_id, :name, :location, :photo, :description, :num_of_members, :slug, :users, :photos, :reviews, :members, :events
 
   def users
     self.object.users.map do |user_obj|
@@ -14,7 +14,19 @@ class GroupSerializer < ActiveModel::Serializer
   def location
     self.object.location.city + ", " + self.object.location.state
   end
-
+  
+  def events
+    self.object.events.map do |event_obj|
+      {
+        id: event_obj.id,
+        name: event_obj.name,
+        location: event_obj.location,
+        photo: event_obj.photo,
+        description: event_obj.description,
+        date: event_obj.date
+      }
+    end
+  end
 
   def photos
     self.object.photos.map do |photo_obj|
@@ -36,5 +48,9 @@ class GroupSerializer < ActiveModel::Serializer
         description: review_obj.description
       }
     end
+  end
+
+  def members
+    self.object.users.count
   end
 end

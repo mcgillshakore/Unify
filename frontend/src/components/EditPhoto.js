@@ -1,7 +1,7 @@
 import React from 'react'
 import {useHistory} from 'react-router'
 
-const EditUser = (props) => {
+const EditPhoto = (props) => {
     let history = useHistory()
     let editUser = (e) => {
         e.preventDefault()
@@ -13,28 +13,25 @@ const EditUser = (props) => {
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                username:e.target.username.value,
-                bio:e.target.bio.value
+                avatar:e.target.avatar.value,
             })
         }).then(resp => resp.json()).then(history.push('/signedin'))
     }
 
     return(
         <div>
-            <h1>Edit Your Account</h1>
+            <h1>Upload New Avatar</h1>
             <p>{props.currentUser.full_name}</p>
 
             <div>
                 <form onSubmit={(e)=> editUser(e)}>
-                    <input name="username" type='text' placeholder='Edit Username...'></input>
+                    <input name="avatar" type='text' placeholder='Edit Image....'></input>
                     <br/><br/>
-                    <textarea name="bio" type='text' placeholder='Edit Bio....'></textarea>
-                    <br/><br/>
-                    <input type='submit' value='Edit Account'></input>
+                    <input type='submit' value='Upload Photo'></input>
                 </form>
             </div>
         </div>
     )
 }
 
-export default EditUser
+export default EditPhoto

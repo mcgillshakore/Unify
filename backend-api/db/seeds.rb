@@ -125,10 +125,17 @@ events = Event.create([
     }
 ])
 
-6.times do |index|
-    Member.create!(user_id: User.all.sample.id,
-                   group_id: Group.all.sample.id)
-end
+m1 = Member.create(user_id: User.first.id, group_id: Group.first.id)
+m2 = Member.create(user_id: User.second.id, group_id: Group.first.id)
+m3 = Member.create(user_id: User.third.id, group_id: Group.second.id)
+m4 = Member.create(user_id: User.fourth.id, group_id: Group.second.id)
+m5 = Member.create(user_id: User.fourth.id, group_id: Group.first.id)
+m6 = Member.create(user_id: User.second.id, group_id: Group.second.id)
+
+# 6.times do |index|
+#     Member.create!(user_id: User.all.sample.id,
+#                    group_id: Group.all.sample.id)
+# end
 
 6.times do |index|
     Ticket.create!(user_id: User.all.sample.id,
