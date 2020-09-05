@@ -3,5 +3,8 @@ class EventSerializer < ActiveModel::Serializer
   def location
     self.object.location.city + ", " + self.object.location.state
   end
+  # def date
+  #  self.date.strftime("%B")
 
+  # end
 end

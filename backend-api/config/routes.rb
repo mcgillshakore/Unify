@@ -16,4 +16,5 @@ Rails.application.routes.draw do
 
   post '/group-info', to:'groups#grab_group'
   post '/user-info', to:'users#grab_user'
+  post '/member-info', to:'members#find_member'
 end

@@ -2,10 +2,10 @@ import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import { useHistory } from 'react-router'
-import MemberCollection from './MemberCollection'
-import EventCollection from './EventCollection'
-import PhotoCollection from './PhotoCollection'
-import ReviewCollection from './ReviewCollection'
+import MemberCollection from '../members/MemberCollection'
+import EventCollection from '../events/EventCollection'
+import PhotoCollection from '../photos/PhotoCollection'
+import ReviewCollection from '../reviews/ReviewCollection'
 
 
 const GroupInfo = (props) => {
@@ -67,12 +67,18 @@ const GroupInfo = (props) => {
             <br/>
             <br/>
             <button onClick={()=>becomeMember()}>Become A Member</button>
-
+        <div>
             <MemberCollection/>
-            <EventCollection/>
+        </div>
+        <div>
+            <EventCollection group={group}/>
+        </div>
+        <div>
             <PhotoCollection/>
+        </div>
+        <div>
             <ReviewCollection/>
-            
+        </div>
         </div>
     )
 }

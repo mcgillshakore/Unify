@@ -3,6 +3,7 @@ const initialState = {
     groups: [],
     group: [],
     members: [],
+    groupmember: [],
     events: [],
     photos: [],
     reviews: [],
@@ -27,6 +28,11 @@ function GroupReducer(state = initialState, action){
             ...state,
             members: action.members
         }
+        case "GET_GROUPMEMBER":
+        return {
+            ...state,
+            groupmember: action.groupmember
+        }
         case "GET_EVENTS":
         return {
             ...state,
@@ -47,7 +53,6 @@ function GroupReducer(state = initialState, action){
             ...state,
             user: action.user
         }
-
             default: return state
         }
 }

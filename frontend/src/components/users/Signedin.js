@@ -13,11 +13,6 @@ function Signedin (props) {
         }).then(history.push('/'))
     }
 
-    let leaveGroup = () => {
-        fetch(`http://localhost:3000/members}`,{
-            method: 'DELETE'
-        }).then(history.push('/signedin'))
-    }
     
 
  return(
@@ -40,7 +35,9 @@ function Signedin (props) {
             <button onClick={()=>history.push(`/edit-account/${props.currentUser.id}`)}>Edit Account's Info</button><span> </span>
             <button onClick={()=>console.log('Change Password')}>Change Password</button><span> </span>
          </div>
+         <div>
          <UserGroups currentUser={props.currentUser}/>
+         </div>
      </div>
  )
 }

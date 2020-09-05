@@ -24,7 +24,7 @@ const GroupForm = () => {
             <h1>Create A Group</h1>
             <form onSubmit={(e) => createGroup(e)}>
                 <input name="name" type="text" placeholder="Enter Group Name..."></input><br/><br/>
-                <select name="location" type="text" placeholder="Enter Group Name...">
+                <select name="location" type="text">
                     <option>------------</option>
                     <option value="1">Memphis, TN</option>
                     <option value="2">Houston, TX</option>
