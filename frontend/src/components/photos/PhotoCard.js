@@ -4,8 +4,8 @@ const PhotoCard = (props) =>{
     return(
         <div>
             <div>
+                <img style={{width: '150px'}} src={props.photo.img_url} alt={props.photo.title}/>
                 <p>{props.photo.title}</p>
-                <img src={props.photo.img_url} alt={props.photo.title}/>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import GroupCollection from './GroupCollection';
+import GroupCollection from '../groups/GroupCollection';
 
 const Home = (props) => {
     return(

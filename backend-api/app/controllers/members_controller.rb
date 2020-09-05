@@ -10,7 +10,7 @@ class MembersController < ApplicationController
     end
 
     def find_member
-        member = Member.find_by(user_id: params[:user_id])
+        member = Member.find_by(user_id: params[:user_id], group_id: params[:group_id])
         render json: member
     end
 
