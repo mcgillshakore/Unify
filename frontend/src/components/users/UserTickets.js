@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
-import UserGroupCard from './UserGroupCard';
+import React, {useEffect}  from 'react';
+import UserTicketCard from './UserTicketCard';
 import { useDispatch, useSelector } from 'react-redux';
 
-const UserGroups = (props) => {
+const UserTickets = (props) => {
 
     let dispatch = useDispatch()
 
@@ -15,20 +15,23 @@ const UserGroups = (props) => {
         })
         .then(resp => resp.json())
         .then(users => {
+            // console.log(users.tickets);
             if(users!== null && users.username === props.currentUser.username){
-                dispatch({type: "GET_USERGROUPS", usergroups: users.groups})
+                dispatch({type: "GET_USERTICKETS", usertickets: users.tickets})
             }
         })
     },[dispatch, props.currentUser.id, props.currentUser.username])
         
-    let allUserGroups = useSelector(state => state.usergroups)
-   
+    let allUserTickets = useSelector(state => state.usertickets)
+    // console.log(allUserTickets);
+
     return(
         <div>
-            <h2>Groups</h2>
-             {allUserGroups.map(userGroup => <UserGroupCard key={userGroup.id} group={userGroup}/>)}
+            <h2>Tickets</h2>
+            {allUserTickets.map(userTicket => <UserTicketCard key={userTicket.id} ticket={userTicket}/>)}
         </div>
     )
+
 }
 
-export default UserGroups
+export default UserTickets

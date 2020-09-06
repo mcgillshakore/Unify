@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
         end
     end
 
-    def destroy
+def destroy
         review = Review.find(params[:id])
 
         if review.destroy
@@ -30,6 +30,6 @@ class ReviewsController < ApplicationController
     private
 
     def reviews_params
-        params.require(:review).permit(:user_id, :group_id, :title, :description)
+        params.require(:review).permit(:user_id, :group_id, :description)
     end
 end

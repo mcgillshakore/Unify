@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     resources :groups, param: :slug
     resources :locations
     resources :members
-    resources :photos, only: [:create, :destroy]
+    resources :photos
     resources :tickets
-    resources :reviews, only: [:create, :destroy]
+    resources :reviews
   # get '*:path', to: 'pages#index', via: :all
   post '/signin', to:'auth#signin'
   get '/check-signin', to:'auth#check_signin'

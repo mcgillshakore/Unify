@@ -62,7 +62,7 @@ const GroupInfo = (props) => {
             <div>
                 Members: {group.members}
                 <br/>
-                About: {group.description}
+                Description: {group.description}
             </div>
             <br/>
             <br/>
@@ -71,13 +71,13 @@ const GroupInfo = (props) => {
             <MemberCollection/>
         </div>
         <div>
-            <EventCollection group={group}/>
+            <EventCollection group={group} currentUser={props.currentUser}/>
         </div>
         <div>
-            <PhotoCollection/>
+            <PhotoCollection group={group}/>
         </div>
         <div>
-            <ReviewCollection/>
+            <ReviewCollection group={group}/>
         </div>
         </div>
     )

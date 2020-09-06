@@ -34,7 +34,10 @@ class GroupSerializer < ActiveModel::Serializer
         id: photo_obj.id, 
         group_id: photo_obj.group_id,
         title: photo_obj.title,
-        img_url: photo_obj.img_url
+        img_url: photo_obj.img_url,
+        user: photo_obj.user.full_name,
+        username: photo_obj.user.username,
+        group: photo_obj.group.name
       }
     end
   end
@@ -44,8 +47,10 @@ class GroupSerializer < ActiveModel::Serializer
       {
         id: review_obj.id, 
         group_id: review_obj.group_id,
-        title: review_obj.title,
-        description: review_obj.description
+        description: review_obj.description,
+        user: review_obj.user.full_name,
+        username: review_obj.user.username,
+        group: review_obj.group.name
       }
     end
   end
