@@ -152,6 +152,5 @@ end
 1.times do |index|
     Review.create!(user_id: User.all.sample.id,
                    group_id: Group.all.sample.id,
-                   title: "Such an Amazing Group",
                    description: "I Really Love this Group")
 end

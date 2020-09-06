@@ -27,8 +27,6 @@
 
 * User should be able to create an event
 
-* User should be able to choose location of event using API
-
 * User should be able to join an event
 
 * User should receive ticket after joining an event

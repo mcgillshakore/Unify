@@ -1,10 +1,12 @@
 import React, {useEffect} from 'react';
 import { useParams } from 'react-router'
 import ReviewCard from './ReviewCard';
+import { useHistory } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux';
 
 const ReviewCollection = (props) => {
     let params = useParams()
+    let history = useHistory()
     let dispatch = useDispatch()
     let allReviews = useSelector(state => state.reviews)
         // console.log(allReviews, "I'm all Reviews");
@@ -25,6 +27,7 @@ const ReviewCollection = (props) => {
     return(
         <div>
             <h2>Reviews</h2>
+            <button onClick={()=>history.push(`/group/${props.group.id}/add-review`)}>Add Review</button><br/><br/>
              {allReviews.map(review => <ReviewCard key={review.id} review={review}/>)}
         </div>
     )

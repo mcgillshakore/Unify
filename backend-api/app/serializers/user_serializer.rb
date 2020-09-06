@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :full_name, :username, :password, :bio, :avatar, :groups, :events, :photos, :reviews 
+  attributes :id, :full_name, :username, :password, :bio, :avatar, :groups, :events, :tickets, :photos, :reviews 
 
 
   def groups
@@ -22,6 +22,18 @@ class UserSerializer < ActiveModel::Serializer
     end
   end
 
+  def tickets
+    self.object.tickets.map do |ticket_obj|
+      {
+        id: ticket_obj.id, 
+        event_id: ticket_obj.event_id,
+        user: ticket_obj.user.full_name,
+        event: ticket_obj.event.name,
+        date: ticket_obj.event.date
+      }
+    end
+  end
+
   def photos
     self.object.photos.map do |photo_obj|
       {
@@ -38,7 +50,6 @@ class UserSerializer < ActiveModel::Serializer
       {
         id: review_obj.id, 
         group_id: review_obj.group_id,
-        title: review_obj.title,
         description: review_obj.description
       }
     end

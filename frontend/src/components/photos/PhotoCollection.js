@@ -1,11 +1,13 @@
 import React, {useEffect} from 'react';
 import { useParams } from 'react-router'
 import PhotoCard from './PhotoCard';
+import { useHistory } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux';
 
 const PhotoCollection = (props) => {
     let params = useParams()
     let dispatch = useDispatch()
+    let history = useHistory()
     let allPhotos = useSelector(state => state.photos)
         // console.log(allPhotos, "I'm all Photos");
     useEffect( () => {
@@ -25,6 +27,7 @@ const PhotoCollection = (props) => {
     return(
         <div>
             <h2>Photos</h2>
+            <button onClick={()=>history.push(`/group/${props.group.id}/add-photo`)}>Add Photo</button><br/><br/>
              {allPhotos.map(photo => <PhotoCard key={photo.id} photo={photo}/>)}
         </div>
     )

@@ -7,7 +7,8 @@ const initialState = {
     events: [],
     photos: [],
     reviews: [],
-    user: []
+    usergroups: [],
+    usertickets: []
 }
 
 function GroupReducer(state = initialState, action){
@@ -48,10 +49,15 @@ function GroupReducer(state = initialState, action){
             ...state,
             reviews: action.reviews
         }
-        case "GET_USER":
+        case "GET_USERGROUPS":
         return {
             ...state,
-            user: action.user
+            usergroups: action.usergroups
+        }
+        case "GET_USERTICKETS":
+        return {
+            ...state,
+            usertickets: action.usertickets
         }
             default: return state
         }

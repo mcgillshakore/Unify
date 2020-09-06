@@ -1,11 +1,11 @@
 import React from 'react';
 
 const ReviewCard = (props) =>{
+    console.log(props.review)
     return(
         <div>
             <div>
-                <p>"{props.review.title}"</p>
-                <p>{props.review.description}</p>
+                <p><strong>{props.review.description}</strong> ~ <em>{props.review.username}</em></p>
             </div>
         </div>
     )
