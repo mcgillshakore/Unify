@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router'
-import { useHistory } from 'react-router'
+// import { useHistory } from 'react-router'
 import MemberCollection from '../members/MemberCollection'
 import EventCollection from '../events/EventCollection'
 import PhotoCollection from '../photos/PhotoCollection'
@@ -13,9 +13,9 @@ const GroupInfo = (props) => {
     let params = useParams()
     // console.log(params.slug);
     let dispatch = useDispatch();
-    let group = useSelector(state => state.group)
+    
     // console.log(group.slug);
-    let history = useHistory()
+    let group = useSelector(state => state.group)
 
     useEffect( () => {
         fetch(`http://localhost:3000/group-info`,{
@@ -32,22 +32,6 @@ const GroupInfo = (props) => {
         })
     },[dispatch, params.slug])
 
-    let becomeMember = () => {
-        console.log("I'm a member");
-        fetch("http://localhost:3000/members",{
-            credentials: "include",
-            method: 'POST',
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({
-                user_id: props.currentUser.id,
-                group_id: group.id
-            })
-
-        }).then(resp => resp.json())
-        .then(history.push(`/${group.slug}`))
-        // history.push(`/${group.slug}`
-    }
-
     return(
         <div>
             <h1>{group.name}</h1>
@@ -60,15 +44,14 @@ const GroupInfo = (props) => {
             </div>
             <br/>
             <div>
-                Members: {group.members}
-                <br/>
+                
                 Description: {group.description}
             </div>
             <br/>
             <br/>
-            <button onClick={()=>becomeMember()}>Become A Member</button>
+           
         <div>
-            <MemberCollection/>
+            <MemberCollection currentUser={props.currentUser}/>
         </div>
         <div>
             <EventCollection group={group} currentUser={props.currentUser}/>

@@ -1,12 +1,14 @@
 import React from 'react'
-import {useParams, useHistory} from 'react-router'
+import {useParams, useHistory} from 'react-router';
+import { useDispatch } from 'react-redux';
 
 
 const AddReview = (props) => {
     let history = useHistory();
     let params = useParams();
-    console.log(params.id);
-    console.log(props.currentUser.id);
+    let dispatch = useDispatch();
+    // console.log(params.id);
+    // console.log(props.currentUser.id);
 
     let addReview = (e) => {
         e.preventDefault()
@@ -21,7 +23,10 @@ const AddReview = (props) => {
                 description: e.target.content.value
             })
         }).then(resp => resp.json())
-        .then(history.goBack())
+        .then(review => {
+            dispatch({type: "ADD_REVIEW", reviews: review})
+            history.goBack()
+        })
     }
    
     return(
