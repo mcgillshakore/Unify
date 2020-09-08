@@ -1,8 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router';
+import { useDispatch } from 'react-redux';
 
 const GroupForm = () => {
     let history = useHistory()
+    let dispatch = useDispatch()
     let createGroup = (e) => {
         e.preventDefault()
     
@@ -17,7 +19,10 @@ const GroupForm = () => {
                 description:e.target.description.value,
             })
         }).then(resp => resp.json())
-        .then(history.push('/'))
+        .then(group => {
+            dispatch({type: "ADD_GROUP", groups: group})
+            history.push('/')
+        })
     }
     return(
         <div>

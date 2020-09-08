@@ -21,8 +21,9 @@ const UserGroups = (props) => {
         })
     },[dispatch, props.currentUser.id, props.currentUser.username])
         
-    let allUserGroups = useSelector(state => state.usergroups)
-   
+    let allUserGroups = useSelector(state => state.usergroups);
+    
+
     return(
         <div>
             <h2>Groups</h2>

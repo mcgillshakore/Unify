@@ -1,15 +1,15 @@
 import React from 'react';
 import {useParams} from 'react-router'
 import { useHistory } from 'react-router';
+import { useDispatch } from 'react-redux';
 
 
 const EventForm = () => {
     let history = useHistory()
     let params = useParams()
+    let dispatch = useDispatch()
     // console.log(params.id);
-
    
-
     let createEvent = (e) => {
         e.preventDefault()
         console.log(e.target.time.value);
@@ -26,7 +26,10 @@ const EventForm = () => {
                 description:e.target.description.value,
             })
         }).then(resp => resp.json())
-        // .then(history.goBack())
+        .then(event => {
+            dispatch({type: "ADD_EVENT", events: event})
+            history.goBack()
+        })
     }
 
     let cancel = () => {

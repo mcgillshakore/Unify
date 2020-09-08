@@ -23,19 +23,24 @@ const LeaveGroup = (props) => {
         }).then(resp => resp.json())
         .then(member => {
             if(member!== null && member.user_id === props.currentUser.id){
-                    dispatch({type: "GET_GROUPMEMBER", groupmember: member.id})
+                    dispatch({type: "GET_GROUPMEMBER", groupmember: member})
                 }
         })
     },[dispatch, props.currentUser.id, params.id])
 
-    let groupMember = useSelector(state => state.groupmember)
-        console.log(groupMember);
+    let groupMember_id = useSelector(state => state.groupmember.id)
+
+        let allUserGroups = useSelector(state => state.usergroups);
+        console.log(allUserGroups);
 
     let leaveGroup = () => {
-        console.log('Delete Group');
-        fetch(`http://localhost:3000/members/${groupMember}}`,{
+        fetch(`http://localhost:3000/members/${groupMember_id}}`,{
             method: 'DELETE'
-        }).then(history.push('/signedin'))
+        }).then( ()=> 
+            // dispatch({type: "DELETE_USERGROUPS", usergroups: allUserGroups.filter( usergroup => usergroup.id !== params.id) }),
+            history.push('/')
+            // state.usergroups.filter(usergroup => usergroup.id !== action.usergroup)
+            )
     }
 
     let dontLeaveGroup = () => {

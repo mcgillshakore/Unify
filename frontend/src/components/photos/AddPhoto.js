@@ -1,9 +1,11 @@
 import React from 'react';
 import {useParams, useHistory} from 'react-router';
+import { useDispatch } from 'react-redux';
 
 const AddPhoto = (props) => {
     let history = useHistory();
     let params = useParams();
+    let dispatch = useDispatch();
     console.log(params.id);
     console.log(props.currentUser.id);
 
@@ -21,7 +23,10 @@ const AddPhoto = (props) => {
                 img_url: e.target.photo.value
             })
         }).then(resp => resp.json())
-        .then(history.goBack())
+        .then(photo => {
+            dispatch({type: "ADD_PHOTO", photos: photo})
+            history.goBack()
+        })
     }
     return(
         <div>
