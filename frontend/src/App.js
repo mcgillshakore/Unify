@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Signin from './components/users/Signin';
 import Signedin from './components/users/Signedin';
 import SignupForm from './components/users/SignupForm';
@@ -21,6 +22,8 @@ import LeaveGroup from './components/groups/LeaveGroup';
 function App() {
   let [currentUser, setUser] = useState({});
   let history = useHistory();
+  let dispatch = useDispatch();
+
 
   let signout = () => {
     fetch('http://localhost:3000/signout',{
@@ -30,6 +33,7 @@ function App() {
     .then(data => {
       console.log(data);
       setUser({})
+      dispatch({type: 'LOGIN', loggedIn: false})
       history.push('/')
     })
   }
@@ -41,17 +45,18 @@ function App() {
     .then(resp => resp.json())
     .then(user => {
       if(user.username){
+        dispatch({type: 'LOGIN', loggedIn: true})
         setUser(user)
       } else {
         history.push('/')
       }
     })
-  },[history])
-
+  },[history,dispatch])
+  
   return (
     <div className="App">
         <div>
-          <Nav/>
+          <Nav currentUser={currentUser}/>
         </div>
           <Switch>
             <Route exact path="/" component={Home}/>

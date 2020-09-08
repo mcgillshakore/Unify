@@ -9,7 +9,9 @@ const initialState = {
     photos: [],
     reviews: [],
     usergroups: [],
-    usertickets: []
+    usertickets: [],
+    loggedIn: false,
+    avatar: []
 }
 
 function GroupReducer(state = initialState, action){
@@ -75,6 +77,16 @@ function GroupReducer(state = initialState, action){
         return {
             ...state,
             usertickets: action.usertickets
+        }
+        case "LOGIN":
+        return {
+            ...state,
+            loggedIn: action.loggedIn
+        }
+        case "GET_AVATAR":
+        return {
+            ...state,
+            avatar: action.avatar
         }
             default: return state
         }

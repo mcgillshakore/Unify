@@ -1,9 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router';
+import { useDispatch } from 'react-redux';
 
 function Signin(props) {
 
     let history = useHistory();
+    let dispatch = useDispatch();
 
     let signin = (e) => {
         e.preventDefault()
@@ -24,6 +26,7 @@ function Signin(props) {
             //   console.log(user);
               if(user.username){
                   props.setUser(user)
+                  dispatch({type: 'LOGIN', loggedIn: true})
                   history.push('/signedin')
               }else{
                   console.log('Not logged In');

@@ -1,8 +1,10 @@
 import React from 'react'
 import {useHistory} from 'react-router'
+import { useDispatch } from 'react-redux';
 
 const EditPhoto = (props) => {
     let history = useHistory()
+    let dispatch = useDispatch()
     let editUser = (e) => {
         e.preventDefault()
 
@@ -15,7 +17,12 @@ const EditPhoto = (props) => {
             body: JSON.stringify({
                 avatar:e.target.avatar.value,
             })
-        }).then(resp => resp.json()).then(history.push('/signedin'))
+        }).then(resp => resp.json()).then(user => {
+            if(user!== null && user.username === props.currentUser.username){
+                dispatch({type: "GET_AVATAR", avatar:user})
+            }
+            history.push('/signedin')
+        })
     }
 
     return(
