@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useEffect}  from 'react';
 import {useHistory} from 'react-router';
 import UserGroups from './UserGroups';
-import UserTickets from './UserTickets'
+import UserTickets from './UserTickets';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Signedin (props) {
-
+// console.log(props.currentUser.avatar);
     let history = useHistory()
+    let dispatch = useDispatch()
     let deleteUser = () => {
 
         fetch(`http://localhost:3000/users/${props.currentUser.id}`,{
@@ -13,7 +15,23 @@ function Signedin (props) {
         }).then(history.push('/'))
     }
 
-    
+    useEffect( () => {
+      fetch(`http://localhost:3000/user-info`,{
+          credentials:"include",
+          method: 'POST',
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({id: props.currentUser.id})
+      })
+      .then(resp => resp.json())
+      .then(user => {
+         if(user!== null && user.username === props.currentUser.username){
+            dispatch({type: "GET_AVATAR", avatar:user})
+        }
+      })
+  },[dispatch, props.currentUser.id, props.currentUser.username])
+
+let user = useSelector(state => state.avatar)
+console.log(user.avatar)
 
  return(
      <div>
@@ -25,7 +43,7 @@ function Signedin (props) {
          </div>
          <br/>
          <div className="user-img">
-            <img style={{width: "150px"}} src={props.currentUser.avatar} alt={props.currentUser.full_name}/><br/>
+            <img style={{width: "150px"}} src={user.avatar} alt={props.currentUser.full_name}/><br/>
             <button onClick={()=>history.push(`/upload-photo/${props.currentUser.id}`)}>Upload New Photo</button>
          </div>
          <div className="user-info">
