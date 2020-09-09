@@ -1,11 +1,13 @@
 import React from 'react';
 import dateFormat from 'dateformat'
 import {useHistory} from 'react-router'
+import { useDispatch } from 'react-redux'
 
 const EventCard = (props) =>{
     let date = dateFormat(props.event.date, "dddd, mmmm dS, yyyy")
     let time = dateFormat(props.event.date, "h:MM:ss TT")
     let history = useHistory()
+    let dispatch = useDispatch()
     let attendEvent = () => {
         fetch('http://localhost:3000/tickets', {
             credentials: 'include',
@@ -18,7 +20,10 @@ const EventCard = (props) =>{
                 event_id: props.event.id
             })
         }).then(resp => resp.json())
-        .then(history.push('/signedin'))
+        .then(ticket => {
+            dispatch({type: "ADD_TICKET", usertickets: ticket})
+            history.push('/signedin')
+        })
     }
     return(
         <div className="event-card">
