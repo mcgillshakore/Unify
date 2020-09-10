@@ -2,12 +2,9 @@ import React from 'react';
 
 const PhotoCard = (props) =>{
     return(
-        <div>
-            <div>
-                <p>{props.photo.title}</p>
-                <img style={{width: '200px'}} src={props.photo.img_url} alt={props.photo.title}/>
-                <p>Photo by: {props.photo.user}</p>
-            </div>
+        <div className="photo-card">
+            <img style={{width: '200px'}} src={props.photo.img_url} alt={props.photo.title}/>
+            <p>{props.photo.title}</p>
         </div>
     )
 }

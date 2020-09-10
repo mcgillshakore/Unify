@@ -33,36 +33,33 @@ const GroupInfo = (props) => {
     },[dispatch, params.slug])
 
     return(
-        <div>
-            <h1>{group.name}</h1>
-            <div>
-                Location: {group.location}
+    <div className="group-info-card"> 
+        <section className="group-info">
+            <div className="group-photo">
+                <img src={group.photo} alt={group.name}/>
             </div>
-            <br/>
-            <div>
-                <img style={{width: '300px'}} src={group.photo} alt={group.name}/>
+            <div className="group-desc">
+                <h1>{group.name}</h1>
+                <br/>
+                <h3><i class="fas fa-map-marker-alt"></i> {group.location}</h3>
+                <br/>
+                    <p><strong>About:</strong> {group.description}</p>
+                <br/>
             </div>
-            <br/>
-            <div>
-                
-                Description: {group.description}
-            </div>
-            <br/>
-            <br/>
-           
-        <div>
+        </section>
+        <div className='members'>
             <MemberCollection currentUser={props.currentUser}/>
         </div>
-        <div>
+        <div className='events'>
             <EventCollection group={group} currentUser={props.currentUser}/>
         </div>
-        <div>
+        <div className='photos'>
             <PhotoCollection group={group}/>
         </div>
-        <div>
+        <div className='reviews'>
             <ReviewCollection group={group}/>
         </div>
-        </div>
+    </div>
     )
 }
 

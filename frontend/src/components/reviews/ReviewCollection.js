@@ -25,9 +25,9 @@ const ReviewCollection = (props) => {
     },[dispatch, params.slug])
         
     return(
-        <div>
+        <div className="review-container">
             <h2>Reviews</h2>
-            <button onClick={()=>history.push(`/group/${props.group.id}/add-review`)}>Add Review</button><br/><br/>
+            <button className="review-btn" onClick={()=>history.push(`/group/${props.group.id}/add-review`)}>Add Review</button><br/><br/>
              {allReviews.map(review => <ReviewCard key={review.id} review={review}/>)}
         </div>
     )

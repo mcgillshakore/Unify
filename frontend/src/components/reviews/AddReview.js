@@ -28,18 +28,19 @@ const AddReview = (props) => {
             history.goBack()
         })
     }
+    let cancel = () => {
+        history.goBack()
+    }
    
     return(
-        <div>
-            <div>
+        <div className="review-form">
                 <h1>Add Review</h1>
-            </div>
             <div>
                 <form onSubmit={(e) => addReview(e)}>
-                    <textarea name="content" type="text" placeholder="Add Content..."/>
+                    <textarea className="review-input" name="content" type="text" placeholder="Add Content..."/>
                     <br/>
                     <br/>
-                    <input type="submit" value="Add Review"/>
+                    <input className="create-review-btn" type="submit" value="Add Review"/> <button className="cancel-btn" onClick={()=>cancel()}>Cancel</button>
                 </form>
             </div>
         </div>

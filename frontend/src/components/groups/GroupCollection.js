@@ -18,7 +18,7 @@ function GroupCollection(){
     },[dispatch])
         
     return(
-        <div>
+        <div className="group-collection">
              {allGroups.map(group => <GroupCard key={group.id} group={group}/>)}
         </div>
     )

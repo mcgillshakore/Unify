@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+    font-family: "Roboto Condensed";
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(233, 233, 233);
+}
+
+.home{
+    padding: 20px;
+    margin: 0px;
+}
+
+.nav-bar{
+    text-align: center;
+    background: rgb(54, 24, 83);
+    padding: 10px;
+    margin: 0px;
+    box-shadow: 0px 0px 8px 0px #3a3939
+}
+
+.Unify{
+    text-decoration: none;
+    font-family: 'Grand Hotel';
+    color: rgb(252, 246, 255);
+    font-size: 50px;
+    position: relative;
+    left: 65px;
+}
+
+.nav-2{
+    position: relative;
+    display: inline-block;
+    left: 400px;
+    /* font-family: 'Grand Hotel'; */
+    color: white;
+    font-size: 20px;
+}
+
+.dropdown .user-profile{
+    color: rgb(252, 246, 255);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.user-avatar{
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    border-radius: 60%;
+}
+
+.avatar{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.menu-btn{
+    background-color:rgb(54, 24, 83);
+    font-family: 'Grand Hotel';
+    color: white;
+    padding: -1px;
+    min-width: 160px;
+    font-size: 40px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    left: 500px;  
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(54, 24, 83);
+    bottom: -25px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.group-collection{
+   width: 90%;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(3, minmax(400px, 1rem));
+   grid-gap: 50px ;
+   grid-template-rows: auto;
+   margin: 1rem 0;
+   padding: 0 1rem;
+}
+
+.group-img {
+    border-radius: 10%;
+    height: 250px;
+    width: 400px;
+}
+
+.group-name{
+    font-size: 1.5rem;
+    position: relative;
+    line-height: 4;
+    padding: 0 2rem;
+    margin: 0;
+    color: rgb(235, 232, 232);
+    text-shadow: 2px 2px #1f1f1fb6;
+    /* background-color: black;  */
+    height: 4rem;
+    margin-top: -5rem;
+}
+
+.group-info{
+    height: 450px;
+}
+
+.group-info .group-photo img{
+    top: 100px;
+    padding: 20px;
+    border-radius: 20%;
+    height: 400px;
+    width: 600px;
+}
+
+.group-desc{
+    width: 500px;
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    left: 750px;
+    bottom: 300px;
+    word-wrap: break-word;
+}
+
+.member-container{
+    font-size: 25px;
+    text-align: center;
+    padding: 50px;
+}
+
+.member{
+    display: inline;
+    padding: 10px;
+}
+
+.member img{
+    height: 100px;
+    width: 100px;
+    border-radius: 80%;
+}
+
+.member-btn{
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 5px;
+    padding: 10px;
+    border: none; 
+}
+
+.event-container h2{
+    font-size: 40px;
+}
+.event-container{
+    font-size: 15px;
+    text-align: center;
+    padding: 50px;
+}
+.event-card{
+    display: inline-block;
+    padding: 20px;
+}
+.event-card img{
+    border-radius: 20%;
+    height: 150px;
+    width: 150px;
+}
+.event-btn{
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 5px;
+    padding: 10px;
+    border: none; 
+}
+
+.user-group-btn{
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 5px;
+    padding: 10px;
+    border: none; 
+}
+.attend-btn{
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 5px;
+    padding: 10px;
+    border: none; 
+}
+
+.photo-btn{
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 5px;
+    padding: 10px;
+    border: none; 
+}
+
+.review-btn{
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 5px;
+    padding: 10px;
+    border: none; 
+}
+
+.user-btn{
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 5px;
+    padding: 10px;
+    border: none; 
+}
+
+.photo-container{
+    font-size: 25px;
+    text-align: center;
+    padding: 50px;
+}
+.photo-card{
+    display: inline-block;
+    padding: 30px;
+}
+.photo-card img{
+    border-radius: 20%;
+    height: 150px;
+    width: 150px;
+}
+
+.review-container{
+    font-size: 25px;
+    text-align: center;
+    padding: 50px;
+}
+.review-card{
+    display: inline-block;
+}
+
+.user-container{
+    padding: 30px;
+    text-align: center;
+}
+
+.user-group{
+    padding: 30px;
+}
+.ticket-card{
+    display: inline-block;
+    padding: 10px;
+}
+
+.login-form{
+    position: relative;
+    left: 40px;
+    top: 200px;
+    text-align: center;
+}
+
+.login-form .signup-input{
+    width: 400px;
+    /* overflow: hidden; */
+    font-size: 20px;
+    text-align: left;
+    padding: 5px 0;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(54, 24, 83);
+    color:  rgb(54, 24, 83);
+    outline: 0;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.login-form i{
+    font-size: 30px;
+    color: rgb(54, 24, 83);
+}
+
+.signup-form i{
+    font-size: 30px;
+    color: rgb(54, 24, 83);
+}
+.signup-form{
+    position: relative;
+    left: 40px;
+    top: 200px;
+    text-align: center;
+}
+
+
+.signup-form .signup-i{
+    width: 400px;
+    /* overflow: hidden; */
+    font-size: 20px;
+    text-align: left;
+    padding: 5px 0;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(54, 24, 83);
+    color:  rgb(54, 24, 83);
+    outline: 0;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.signup-btn{
+    font-size: 20px;
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 10px;
+    padding: 10px;
+    border: none; 
+}
+
+.create-group-form{
+    position: relative;
+    left: 40px;
+    top: 150px;
+    text-align: center;
+}
+
+
+.create-group-form .group-input{
+    width: 400px;
+    /* overflow: hidden; */
+    font-size: 20px;
+    text-align: left;
+    padding: 5px 0;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(54, 24, 83);
+    color:  rgb(54, 24, 83);
+    outline: 0;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.create-g-btn{
+    font-size: 20px;
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 10px;
+    padding: 10px;
+    border: none; 
+}
+
+.create-event-form{
+    position: relative;
+    left: 40px;
+    top: 150px;
+    text-align: center;
+}
+
+
+.create-event-form .event-input{
+    width: 400px;
+    /* overflow: hidden; */
+    font-size: 20px;
+    text-align: left;
+    padding: 5px 0;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(54, 24, 83);
+    color:  rgb(54, 24, 83);
+    outline: 0;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.create-e-btn{
+    font-size: 20px;
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 10px;
+    padding: 10px;
+    border: none; 
+}
+
+.cancel-btn{
+    font-size: 20px;
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 10px;
+    padding: 10px;
+    border: none; 
+}
+
+.review-form{
+    position: relative;
+    left: 40px;
+    top: 150px;
+    text-align: center;
+}
+
+.review-form .review-input{
+    width: 400px;
+    /* overflow: hidden; */
+    font-size: 20px;
+    text-align: left;
+    padding: 5px 0;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(54, 24, 83);
+    color:  rgb(54, 24, 83);
+    outline: 0;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.create-review-btn{
+    font-size: 20px;
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 10px;
+    padding: 10px;
+    border: none; 
+}
+
+
+.photo-form{
+    position: relative;
+    left: 40px;
+    top: 150px;
+    text-align: center;
+}
+
+.photo-form .photo-input{
+    width: 400px;
+    /* overflow: hidden; */
+    font-size: 20px;
+    text-align: left;
+    padding: 5px 0;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(54, 24, 83);
+    color:  rgb(54, 24, 83);
+    outline: 0;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.create-p-btn{
+    font-size: 20px;
+    background-color: rgb(54, 24, 83);
+    box-shadow: 1px 1px 4px rgb(54, 56, 58);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    margin: 10px;
+    padding: 10px;
+    border: none; 
+}

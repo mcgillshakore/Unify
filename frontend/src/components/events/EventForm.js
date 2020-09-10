@@ -36,11 +36,11 @@ const EventForm = () => {
         history.goBack()
     }
     return(
-        <div>
+        <div className="create-event-form">
             <h1>Create A Event</h1>
             <form onSubmit={(e) => createEvent(e)}>
-                <input name="name" type="text" placeholder="Enter Event Name..."></input><br/><br/>
-                <select name="location" type="text">
+                <input className="event-input" name="name" type="text" placeholder="Enter Event Name..."></input><br/><br/>
+                <select className="event-input" name="location" type="text">
                     <option>------------</option>
                     <option value="1">Memphis, TN</option>
                     <option value="2">Houston, TX</option>
@@ -48,13 +48,13 @@ const EventForm = () => {
                     <option value="4">San Francisco, CA</option>
                 </select><br/><br/>
                 <div>
-                <input type="datetime-local" name="time"
+                <input className="event-input" type="datetime-local" name="time"
                     min="2020-01-01T00:00" max="2022-01-01T00:00"/>
                 </div>
                 <br/><br/>
-                <input name="photo" type="text" placeholder="Enter Event Photo..."></input><br/><br/>
-                <textarea name="description" type="text" placeholder="Enter Event Description..."></textarea><br/><br/>
-                <input type="submit" value="Create Event"></input> <button onClick={()=>cancel()}>Cancel</button>
+                <input className="event-input" name="photo" type="text" placeholder="Enter Event Photo..."></input><br/><br/>
+                <textarea className="event-input" name="description" type="text" placeholder="Enter Event Description..."></textarea><br/><br/>
+                <input className="create-e-btn" type="submit" value="Create Event"></input> <button className="cancel-btn" onClick={()=>cancel()}>Cancel</button>
             </form>
            
         </div>

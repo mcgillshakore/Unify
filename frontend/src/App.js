@@ -15,6 +15,7 @@ import GroupInfo from './components/groups/GroupInfo'
 import { Switch, Route} from 'react-router-dom';
 import { useHistory } from 'react-router';
 import LeaveGroup from './components/groups/LeaveGroup';
+import CSS from './App.css'
 
 
 
@@ -55,23 +56,23 @@ function App() {
   
   return (
     <div className="App">
-        <div>
-          <Nav currentUser={currentUser}/>
-        </div>
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/group/:id/add-photo" component = {() => <AddPhoto currentUser = {currentUser}/>}/>
-            <Route exact path="/group/:id/add-review" component = {() => <AddReview currentUser = {currentUser}/>}/>
-            <Route exact path ="/group-form" component ={GroupForm} />
-            <Route exact path ="/group/:id/event-form" component ={EventForm} />
-            <Route exact path="/delete-group/:id" component={() => <LeaveGroup currentUser = {currentUser}/>}/>
-            <Route exact path="/edit-account/:id" component={() => <EditUser currentUser = {currentUser} />}/>
-            <Route exact path="/upload-photo/:id" component={() => <EditPhoto currentUser = {currentUser} />}/>
-            <Route exact path ='/signin' component= { () => <Signin setUser = {setUser} currentUser = {currentUser}/> }/>
-            <Route exact path ='/signedin' component={ () => <Signedin currentUser = { currentUser } signout = {signout}/> }/>
-            <Route exact path ='/signup' component = {SignupForm}/>
-            <Route exact path="/:slug" component={() => <GroupInfo currentUser = {currentUser} />}/>
-          </Switch>
+      <div className="nav-bar">
+        <Nav currentUser={currentUser}/>
+      </div>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/group/:id/add-photo" component = {() => <AddPhoto currentUser = {currentUser}/>}/>
+          <Route exact path="/group/:id/add-review" component = {() => <AddReview currentUser = {currentUser}/>}/>
+          <Route exact path ="/group-form" component ={GroupForm} />
+          <Route exact path ="/group/:id/event-form" component ={EventForm} />
+          <Route exact path="/delete-group/:id" component={() => <LeaveGroup currentUser = {currentUser}/>}/>
+          <Route exact path="/edit-account/:id" component={() => <EditUser currentUser = {currentUser} />}/>
+          <Route exact path="/upload-photo/:id" component={() => <EditPhoto currentUser = {currentUser} />}/>
+          <Route exact path ='/signin' component= { () => <Signin setUser = {setUser} currentUser = {currentUser}/> }/>
+          <Route exact path ='/signedin' component={ () => <Signedin currentUser = { currentUser } signout = {signout}/> }/>
+          <Route exact path ='/signup' component = {SignupForm}/>
+          <Route exact path="/:slug" component={() => <GroupInfo currentUser = {currentUser} />}/>
+        </Switch>
     </div>
   );
 }
