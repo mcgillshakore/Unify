@@ -34,29 +34,32 @@ let user = useSelector(state => state.avatar)
 console.log(user.avatar)
 
  return(
-     <div>
+     <div className="user-container">
          <div>
             <h1>Hello, {props.currentUser.full_name}</h1>
-            <button onClick={() =>history.push('/group-form')}>Create A Group</button><span> </span>
-            <button onClick={()=> deleteUser()}>Delete Account</button><span> </span>
-            <button onClick={()=> props.signout()}>Sign Out</button>
+            <br></br>
+            <button className="user-btn"onClick={() =>history.push('/group-form')}>Create A Group</button><span> </span>
+            <button className="user-btn" onClick={()=> deleteUser()}>Delete Account</button><span> </span>
+            <button className="user-btn" onClick={()=> props.signout()}>Sign Out</button>
          </div>
          <br/>
          <div className="user-img">
-            <img style={{width: "150px"}} src={user.avatar} alt={props.currentUser.full_name}/><br/>
-            <button onClick={()=>history.push(`/upload-photo/${props.currentUser.id}`)}>Upload New Photo</button>
+            <img className="avatar"src={user.avatar} alt={props.currentUser.full_name}/><br/>
+            <button className="user-btn"  onClick={()=>history.push(`/upload-photo/${props.currentUser.id}`)}><i class="fas fa-camera"></i> Upload</button>
          </div>
+         <br/>
          <div className="user-info">
+            <h3><i class="far fa-user"></i> Username: {props.currentUser.username}</h3>
             <h3>Full Name: {props.currentUser.full_name}</h3>
-            <h3>Username: {props.currentUser.username}</h3>
             <h3>Bio: {props.currentUser.bio}</h3>
-            <button onClick={()=>history.push(`/edit-account/${props.currentUser.id}`)}>Edit Account's Info</button><span> </span>
-            <button onClick={()=>console.log('Change Password')}>Change Password</button><span> </span>
+            <br></br>
+            <button className="user-btn" onClick={()=>history.push(`/edit-account/${props.currentUser.id}`)}>Edit Account's Info</button><span> </span>
+            <button className="user-btn" onClick={()=>console.log('Change Password')}>Change Password</button><span> </span>
          </div>
-         <div>
+         <div className="user-group">
             <UserGroups currentUser={props.currentUser}/>
          </div>
-         <div>
+         <div className="user-ticket">
             <UserTickets currentUser={props.currentUser}/>
          </div>
      </div>

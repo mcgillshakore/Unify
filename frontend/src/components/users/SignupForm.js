@@ -25,20 +25,20 @@ function SignupForm (props) {
         }).then(resp => resp.json()).then(history.push('/signin'))
     }
     return(
-        <div>
-            <h1>Signup Form</h1>
+        <div className="signup-form">
+            <h1>Join Us !</h1>
             <div>
                 <form onSubmit={ (e) => createUser(e)}>
-                    <input name="fullname" type='text' placeholder="Enter Your Full Name..."></input>
+                <i class="far fa-user"></i> <input className="signup-i" name="fullname" type='text' placeholder="Enter Your Full Name..."></input>
                     <br/>
                     <br/>
-                    <input name="username" type='text' placeholder="Create Username..."></input>
+                    <i class="far fa-user-circle"></i> <input className="signup-i"  name="username" type='text' placeholder="Create Username..."></input>
                     <br/>
                     <br/>
-                    <input name="password" type='text' placeholder="Create Password..."></input>
+                    <i class="fas fa-key"></i> <input className="signup-i"  name="password" type='text' placeholder="Create Password..."></input>
                     <br/>
                     <br/>
-                    <input type='submit' value='Create Account'></input>
+                    <input className="signup-btn" type='submit' value='Create Account'></input>
                 </form>
             </div>
         </div>

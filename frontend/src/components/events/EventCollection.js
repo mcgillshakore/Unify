@@ -24,9 +24,10 @@ const EventCollection = (props) => {
     },[dispatch, params.slug])
         
     return(
-        <div>
+        <div className="event-container">
             <h2>Events</h2>
-            <button onClick={()=>history.push(`/group/${props.group.id}/event-form`)}>Create Event</button>
+            <br/>
+            <button className="event-btn" onClick={()=>history.push(`/group/${props.group.id}/event-form`)}>Create Event</button><br/>
              {allEvents.map(event => <EventCard key={event.id} event={event} currentUser={props.currentUser}/>)}
         </div>
     )

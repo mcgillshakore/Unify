@@ -28,20 +28,21 @@ const AddPhoto = (props) => {
             history.goBack()
         })
     }
+    let cancel = () => {
+        history.goBack()
+    }
     return(
-        <div>
+        <div className="photo-form" >
+            <h1>Add Photo</h1>
             <div>
-                <h1>Add Photo</h1>
-            </div>
-            <div>
-            <form onSubmit={(e) => addPhoto(e)}>
-                    <input name="title" type="text" placeholder="Add Title..."/>
+                <form onSubmit={(e) => addPhoto(e)}>
+                    <input className="photo-input" name="title" type="text" placeholder="Add Title..."/>
                     <br/>
                     <br/>
-                    <input name="photo" type="text" placeholder="Add Image URL..."/>
+                    <input className="photo-input" name="photo" type="text" placeholder="Add Image URL..."/>
                     <br/>
                     <br/>
-                    <input type="submit" value="Add Photo"/>
+                    <input className="create-p-btn" type="submit" value="Add Photo"/><button className="cancel-btn" onClick={()=>cancel()}>Cancel</button>
                 </form>
             </div>
         </div>

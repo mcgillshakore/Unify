@@ -6,12 +6,10 @@ import { useHistory } from 'react-router';
 const GroupCard = (props) => {
     let history = useHistory()
     return(
-        <div>
-            <h2>{props.group.name}</h2>
-            <div onClick={() => history.push(`/${props.group.slug}`)}>
-                <img style={{width: '300px'}} className="group-photo" src={props.group.photo} alt="img"/>
-            </div>
-        </div>
+    <div className="group-card" onClick={() => history.push(`/${props.group.slug}`)}>
+            <img className="group-img" src={props.group.photo} alt="img"/>
+            <h1 className="group-name">{props.group.name}</h1>
+    </div>
     )
 }
 

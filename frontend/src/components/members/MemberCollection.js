@@ -46,11 +46,12 @@ const MemberCollection = (props) => {
     let allMembers = useSelector(state => state.members)
         
     return(
-        <div>
+        <div className="member-container">
             <h2>Members</h2>
-            <p>Current Members: <strong>{num_of_members}</strong></p>
+            <br></br>
+            <p><strong>Current Members:</strong> {num_of_members}</p>
             <br/>
-            <button onClick={()=>becomeMember()}>Become A Member</button>
+            <button className="member-btn" onClick={()=>becomeMember()}><i class="fas fa-users"></i> Become A Member</button>
             <br/>
             <br/>
              {allMembers.map(member => <MemberCard key={member.id} member={member}/>)}

@@ -3,10 +3,8 @@ import React from 'react';
 const ReviewCard = (props) =>{
     // console.log(props.review)
     return(
-        <div>
-            <div>
-                <p><strong>{props.review.description}</strong> ~ <em>{props.review.username}</em></p>
-            </div>
+        <div className="review-card">
+            <p><strong>{props.review.description}</strong> ~ <em>{props.review.username}</em></p>
         </div>
     )
 }

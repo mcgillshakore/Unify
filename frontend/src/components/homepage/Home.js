@@ -3,8 +3,7 @@ import GroupCollection from '../groups/GroupCollection';
 
 const Home = (props) => {
     return(
-        <div>
-            <h1>Home Page</h1>
+        <div className="home">
             <GroupCollection />
         </div>
     )

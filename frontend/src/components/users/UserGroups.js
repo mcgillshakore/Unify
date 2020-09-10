@@ -27,6 +27,7 @@ const UserGroups = (props) => {
     return(
         <div>
             <h2>Groups</h2>
+            <br></br>
              {allUserGroups.map(userGroup => <UserGroupCard key={userGroup.id} group={userGroup}/>)}
         </div>
     )

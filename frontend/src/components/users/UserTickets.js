@@ -28,6 +28,7 @@ const UserTickets = (props) => {
     return(
         <div>
             <h2>Tickets</h2>
+            <br></br>
             {allUserTickets.map(userTicket => <UserTicketCard key={userTicket.id} ticket={userTicket}/>)}
         </div>
     )

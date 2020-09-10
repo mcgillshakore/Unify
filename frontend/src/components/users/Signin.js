@@ -35,17 +35,17 @@ function Signin(props) {
     }
 
  return(
-     <div>
-         <h1>Signin Page</h1>
+     <div className="login-form">
+         <h1>Log In</h1>
          <div>
              <form onSubmit={ (e) => signin(e)}>
-                <input name='username' type='text' placeholder='Enter Username...'></input>
+             <i class="far fa-user"></i> <input className="signup-input" name='username' type='text' placeholder='Enter Username...'></input>
                 <br/>
                 <br/>
-                <input name='password' type='password' placeholder='Enter Password...'></input>
+             <i class="fas fa-key"></i> <input className="signup-input" name='password' type='password' placeholder='Enter Password...'></input>
                 <br/>
                 <br/>
-                <input type='submit' value='Sign In'></input>
+                <input className="signup-btn" type='submit' value='Log In'></input>
              </form>
          </div>
      </div>

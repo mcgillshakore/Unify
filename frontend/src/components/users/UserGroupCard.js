@@ -6,7 +6,7 @@ const UserGroupCard = (props) =>{
     return(
         <div>
             <div>
-                <p>{props.group.name} <button onClick={()=>history.push(`/delete-group/${props.group.id}`)}>x</button></p>
+            <button className="user-group-btn" onClick={()=>history.push(`/delete-group/${props.group.id}`)}><i class="fas fa-users-slash"></i> {props.group.name} </button>
                 {/* <button onClick={()=>history.push(`/delete-group/${props.group.id}`)}>X</button> */}
             </div>
         </div>
