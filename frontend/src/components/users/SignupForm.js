@@ -35,7 +35,7 @@ function SignupForm (props) {
                     <i class="far fa-user-circle"></i> <input className="signup-i"  name="username" type='text' placeholder="Create Username..."></input>
                     <br/>
                     <br/>
-                    <i class="fas fa-key"></i> <input className="signup-i"  name="password" type='text' placeholder="Create Password..."></input>
+                    <i class="fas fa-key"></i> <input className="signup-i"  name="password" type='password' placeholder="Create Password..."></input>
                     <br/>
                     <br/>
                     <input className="signup-btn" type='submit' value='Create Account'></input>

@@ -20,17 +20,15 @@ const EditUser = (props) => {
     }
 
     return(
-        <div>
+        <div className="edit-form">
             <h1>Edit Your Account</h1>
-            <p>{props.currentUser.full_name}</p>
-
             <div>
                 <form onSubmit={(e)=> editUser(e)}>
-                    <input name="username" type='text' placeholder='Edit Username...'></input>
+                    <input className="edit-input" name="username" type='text' placeholder='Edit Username...'></input>
                     <br/><br/>
-                    <textarea name="bio" type='text' placeholder='Edit Bio....'></textarea>
+                    <textarea className="edit-input" name="bio" type='text' placeholder='Edit Bio....'></textarea>
                     <br/><br/>
-                    <input type='submit' value='Edit Account'></input>
+                    <input className="edit-user-btn" type='submit' value='Edit Account'></input>
                 </form>
             </div>
         </div>

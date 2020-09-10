@@ -51,7 +51,7 @@ console.log(user.avatar)
          <div className="user-info">
             <h3><i class="far fa-user"></i> Username: {props.currentUser.username}</h3>
             <h3>Full Name: {props.currentUser.full_name}</h3>
-            <h3>Bio: {props.currentUser.bio}</h3>
+            <h3>Bio: {user.bio}</h3>
             <br></br>
             <button className="user-btn" onClick={()=>history.push(`/edit-account/${props.currentUser.id}`)}>Edit Account's Info</button><span> </span>
             <button className="user-btn" onClick={()=>console.log('Change Password')}>Change Password</button><span> </span>

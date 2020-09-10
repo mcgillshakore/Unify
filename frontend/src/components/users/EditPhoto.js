@@ -26,15 +26,13 @@ const EditPhoto = (props) => {
     }
 
     return(
-        <div>
+        <div className="edit-photo-form">
             <h1>Upload New Avatar</h1>
-            <p>{props.currentUser.full_name}</p>
-
             <div>
                 <form onSubmit={(e)=> editUser(e)}>
-                    <input name="avatar" type='text' placeholder='Edit Image....'></input>
+                    <input className="edit-photo-input" name="avatar" type='text' placeholder='Edit Image....'></input>
                     <br/><br/>
-                    <input type='submit' value='Upload Photo'></input>
+                    <input className="edit-photo-btn" type='submit' value='Upload Photo'></input>
                 </form>
             </div>
         </div>
