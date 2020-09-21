@@ -1,6 +1,6 @@
-# Eccentric - Mod 5 Project
+# Unify - Mod 5 Project
 
-**Name of App:** Eccentric
+**Name of App:** Unify
 
 **Backend:** Rails
 
