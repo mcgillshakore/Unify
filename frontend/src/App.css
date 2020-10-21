@@ -107,7 +107,7 @@ body {
    grid-gap: 50px ;
    grid-template-rows: auto;
    margin: 1rem 0;
-   padding: 0 1rem;
+   padding: 1em 1em 0 2.2em ;
 }
 
 .group-img {
